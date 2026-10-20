@@ -16,7 +16,7 @@ main[data-art="landscape"] .stack{width:min(420px,42%)}
 .chip{padding:8px 14px;background:rgba(255,253,244,.88);border:1px solid rgba(199,207,179,.9);border-radius:14px;box-shadow:0 3px 0 rgba(30,50,36,.12);backdrop-filter:blur(2px)}.journey{padding:12px 16px;font-size:14px;width:100%}
 #play{width:100%;min-height:56px;background:linear-gradient(#f7d986,#e2b24a);color:#2b3f35;font-size:19px;border:2px solid #9a6f1e;border-radius:14px;box-shadow:0 4px 0 rgba(90,60,10,.30),inset 0 2px 0 rgba(255,255,255,.45)}#play:active{transform:translateY(2px);box-shadow:0 1px 0 rgba(90,60,10,.30)}.small{font-size:12px}#preview{color:#315f4b;font-weight:bold}#error{position:absolute;inset:10%;background:#faf6e9;color:#7d2e26;padding:24px;overflow:auto;border-radius:16px}
 </style></head><body>
-<header><span>꼬꼬마을 · v0.38.0</span><button id="refresh" type="button" disabled>저장 후 새 버전</button></header>
+<header><span>꼬꼬마을 · v0.39.0</span><button id="refresh" type="button" disabled>저장 후 새 버전</button></header>
 <main data-art="portrait"><canvas id="unity-canvas" width="540" height="960" tabindex="0" aria-label="꼬꼬마을 게임 화면, 마우스 또는 손가락으로 드래그하여 이동"></canvas>
 <section id="welcome" aria-label="게임 시작"><div class="stack"><h1><img class="logo" src="Art/logo.png" alt="꼬꼬마을" width="1024" height="512"></h1><p class="chip">작은 농장에서 시작하는 우리 마을의 모험</p></div><div class="stack"><div class="journey chip">가까이 가면 달걀이 머리 위로!<br>시장에 가져가면 자동으로 골드!<br>농장을 키우고 여덟 밤을 지켜 주세요.<br>그다음엔 부대를 이끌고 숲으로!</div><button id="play" type="button">농장으로 가기</button><a href="?showcase=1" id="preview" class="chip">30초 아트·손맛 미리보기 →</a><p class="small chip">끌어서 이동 · 놓으면 정지 · 시설은 탭<br>PC에서는 마우스 하나면 돼요.<br>진행은 이 브라우저에 자동 저장됩니다.</p></div></section>
 <div id="loading" role="status" hidden><img class="logo" src="Art/logo.png" alt="꼬꼬마을" width="1024" height="512"><p id="loadtext" class="chip">농장을 준비하고 있어요… 0%</p><div class="bar"><div id="loadfill"></div></div><p class="small chip">첫 로딩은 몇 초 걸려요</p></div><div id="error" role="alert" hidden></div></main>
@@ -31,6 +31,6 @@ refresh.onclick=()=>{if(isShowcase){location.reload();return;}if(gameInstance)ga
 play.onclick=()=>{play.disabled=true;welcome.hidden=true;loading.hidden=false;
 createUnityInstance(canvas,{
  autoSyncPersistentDataPath:true,arguments:[],dataUrl:'Build/Web.data',frameworkUrl:'Build/Web.framework.js',codeUrl:'Build/Web.wasm',streamingAssetsUrl:'StreamingAssets',
- companyName:"Little Coop",productName:"Coop Night",productVersion:"0.38.0",devicePixelRatio:Math.min(window.devicePixelRatio||1,1.5)
+ companyName:"Little Coop",productName:"Coop Night",productVersion:"0.39.0",devicePixelRatio:Math.min(window.devicePixelRatio||1,1.5)
 },p=>{document.getElementById('loadtext').textContent='농장을 준비하고 있어요… '+Math.round(p*100)+'%';document.getElementById('loadfill').style.width=Math.round(p*100)+'%';}).then(instance=>{gameInstance=instance;refresh.disabled=false;loading.hidden=true;canvas.focus();}).catch(e=>{loading.hidden=true;error.hidden=false;error.textContent='게임을 불러오지 못했어요. Chrome에서 새로고침해 주세요. '+String(e);});};
 </script></body></html>
