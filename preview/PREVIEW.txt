@@ -1,1 +1,1 @@
-CoopNight test preview v0.46.1, built 2026-11-10 14:07, not gate-verified
+CoopNight test preview v0.47.0, built 2026-11-11 08:40, not gate-verified
